@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>دعوة زفاف - مصطفى & ياسمين</title>
+  <meta property="og:title" content="دعوة زفاف - مصطفى & ياسمين"/>
+  <meta property="og:description" content="يسعدان بدعوتكم لحضور حفل زفافهما المبارك في القاهرة"/>
+  <meta property="og:image" content="https://i.imgur.com/placeholder.jpg"/>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="extras.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Lateef:wght@200;300;400;500;600;700;800&family=Scheherazade+New:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- Particles Background -->
+  <div id="particles-container"></div>
+
+  <!-- Music Button -->
+  <button class="music-btn" id="musicBtn" title="تشغيل الموسيقى">
+    <i class="fas fa-music" id="musicIcon"></i>
+  </button>
+  <audio id="bgMusic" loop>
+    <!-- يمكن استبدال هذا الرابط بموسيقى شرقية مناسبة -->
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3"/>
+  </audio>
+
+  <!-- ========== SPLASH SCREEN ========== -->
+  <div id="splash">
+    <!-- Decorative corner SVGs -->
+    <svg class="splash-corner tl" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.5">
+        <path d="M5,5 L115,5 L115,115"/>
+        <path d="M15,15 L105,15 L105,105"/>
+        <circle cx="60" cy="60" r="30"/>
+        <path d="M5,5 Q60,30 115,5"/>
+        <path d="M5,5 Q30,60 5,115"/>
+      </g>
+    </svg>
+    <svg class="splash-corner tr" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.5">
+        <path d="M115,5 L5,5 L5,115"/>
+        <path d="M105,15 L15,15 L15,105"/>
+        <circle cx="60" cy="60" r="30"/>
+        <path d="M115,5 Q60,30 5,5"/>
+        <path d="M115,5 Q90,60 115,115"/>
+      </g>
+    </svg>
+    <svg class="splash-corner bl" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.5">
+        <path d="M5,115 L115,115 L115,5"/>
+        <path d="M15,105 L105,105 L105,15"/>
+        <circle cx="60" cy="60" r="30"/>
+        <path d="M5,115 Q60,90 115,115"/>
+        <path d="M5,115 Q30,60 5,5"/>
+      </g>
+    </svg>
+    <svg class="splash-corner br" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.5">
+        <path d="M115,115 L5,115 L5,5"/>
+        <path d="M105,105 L15,105 L15,15"/>
+        <circle cx="60" cy="60" r="30"/>
+        <path d="M115,115 Q60,90 5,115"/>
+        <path d="M115,115 Q90,60 115,5"/>
+      </g>
+    </svg>
+
+    <div class="splash-content">
+      <div class="splash-bismillah">بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيمِ</div>
+
+      <!-- Henna hand icon -->
+      <div class="splash-henna-icon">🌿</div>
+
+      <div class="splash-names">مصطفى & ياسمين</div>
+
+      <div class="splash-tag">✦ حفل الزفاف ✦</div>
+
+      <div class="splash-divider">
+        <span></span><i class="fas fa-star"></i><span></span>
+      </div>
+
+      <div class="splash-sub">
+        يسعدان بدعوتكم الكريمة<br/>
+        لحضور حفل زفافهما المبارك
+      </div>
+
+      <button class="splash-btn" id="enterBtn">
+        <i class="fas fa-envelope-open-text"></i>
+        افتح الدعوة
+      </button>
+    </div>
+  </div>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <div id="mainContent" class="hidden">
+
+    <!-- ===== Hero Section ===== -->
+    <section class="hero">
+      <div class="hero-content reveal">
+        <div class="bismillah">بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيمِ</div>
+
+        <div class="ayah">
+          "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا"
+        </div>
+
+        <!-- Gold SVG Ornament -->
+        <div class="hero-ornament">
+          <svg viewBox="0 0 500 60" xmlns="http://www.w3.org/2000/svg" width="100%">
+            <path d="M0,30 Q125,5 250,30 Q375,55 500,30" stroke="#D4AF37" stroke-width="1.2" fill="none" opacity="0.6"/>
+            <path d="M0,30 Q125,55 250,30 Q375,5 500,30" stroke="#D4AF37" stroke-width="0.6" fill="none" opacity="0.3"/>
+            <circle cx="250" cy="30" r="5" fill="#D4AF37" opacity="0.8"/>
+            <circle cx="125" cy="17" r="2.5" fill="#D4AF37" opacity="0.5"/>
+            <circle cx="375" cy="43" r="2.5" fill="#D4AF37" opacity="0.5"/>
+            <circle cx="50" cy="28" r="1.5" fill="#D4AF37" opacity="0.4"/>
+            <circle cx="450" cy="32" r="1.5" fill="#D4AF37" opacity="0.4"/>
+          </svg>
+        </div>
+
+        <!-- Couple -->
+        <div class="couple-container">
+          <div class="bride-side">
+            <div class="person-photo bride-photo">
+              <div class="photo-inner bride-icon">
+                <i class="fas fa-female"></i>
+              </div>
+            </div>
+            <div class="person-name shimmer-text">ياسمين</div>
+            <div class="person-sub">العروسة</div>
+          </div>
+
+          <div class="heart-divider">
+            <div class="heart-main">🌿</div>
+            <div class="and-text">&</div>
+          </div>
+
+          <div class="groom-side">
+            <div class="person-photo groom-photo">
+              <div class="photo-inner groom-icon">
+                <i class="fas fa-user-tie"></i>
+              </div>
+            </div>
+            <div class="person-name shimmer-text">مصطفى</div>
+            <div class="person-sub">العريس</div>
+          </div>
+        </div>
+
+        <!-- Gold SVG Ornament (bottom) -->
+        <div class="hero-ornament" style="transform:scaleY(-1)">
+          <svg viewBox="0 0 500 60" xmlns="http://www.w3.org/2000/svg" width="100%">
+            <path d="M0,30 Q125,5 250,30 Q375,55 500,30" stroke="#D4AF37" stroke-width="1.2" fill="none" opacity="0.6"/>
+            <path d="M0,30 Q125,55 250,30 Q375,5 500,30" stroke="#D4AF37" stroke-width="0.6" fill="none" opacity="0.3"/>
+            <circle cx="250" cy="30" r="5" fill="#D4AF37" opacity="0.8"/>
+            <circle cx="125" cy="17" r="2.5" fill="#D4AF37" opacity="0.5"/>
+            <circle cx="375" cy="43" r="2.5" fill="#D4AF37" opacity="0.5"/>
+          </svg>
+        </div>
+
+        <div class="invite-text">
+          يسعدان بدعوتكم الكريمة لحضور حفل زفافهما المبارك
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Countdown Section ===== -->
+    <section class="countdown-section">
+      <div class="section-ornament reveal">✦ ✦ ✦</div>
+      <h2 class="section-title dark-section reveal">العد التنازلي للحفل</h2>
+
+      <div class="countdown reveal">
+        <div class="count-item">
+          <div class="count-num" id="days">00</div>
+          <div class="count-label">يوم</div>
+        </div>
+        <div class="count-sep">:</div>
+        <div class="count-item">
+          <div class="count-num" id="hours">00</div>
+          <div class="count-label">ساعة</div>
+        </div>
+        <div class="count-sep">:</div>
+        <div class="count-item">
+          <div class="count-num" id="minutes">00</div>
+          <div class="count-label">دقيقة</div>
+        </div>
+        <div class="count-sep">:</div>
+        <div class="count-item">
+          <div class="count-num" id="seconds">00</div>
+          <div class="count-label">ثانية</div>
+        </div>
+      </div>
+
+      <div class="event-date reveal">
+        <i class="fas fa-calendar-alt"></i>
+        <span>الجمعة، 17 يوليو 2027</span>
+      </div>
+    </section>
+
+    <!-- ===== Details Section ===== -->
+    <section class="details-section">
+      <div class="section-ornament reveal">✦ ✦ ✦</div>
+      <h2 class="section-title reveal">تفاصيل الحفل</h2>
+
+      <div class="details-grid">
+        <div class="detail-card reveal">
+          <div class="detail-icon"><i class="fas fa-calendar-day"></i></div>
+          <div class="detail-title">التاريخ</div>
+          <div class="detail-value">الجمعة، 17 يوليو 2027</div>
+          <div class="detail-sub">الموافق 22 محرم 1449 هـ</div>
+        </div>
+
+        <div class="detail-card reveal">
+          <div class="detail-icon"><i class="fas fa-clock"></i></div>
+          <div class="detail-title">الوقت</div>
+          <div class="detail-value">8:00 مساءً</div>
+          <div class="detail-sub">الاستقبال من 7:30 م</div>
+        </div>
+
+        <div class="detail-card reveal">
+          <div class="detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="detail-title">المكان</div>
+          <div class="detail-value">قاعة النيل الكبرى</div>
+          <div class="detail-sub">شارع النيل، القاهرة</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Location Section ===== -->
+    <section class="location-section">
+      <div class="section-ornament reveal">✦ ✦ ✦</div>
+      <h2 class="section-title dark-section reveal">موقع الحفل</h2>
+
+      <div class="map-container reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110817.83157999904!2d31.18539557387657!3d30.059482228799725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2sCairo!5e0!3m2!1sar!2seg!4v1698000000000"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <a href="https://maps.google.com/?q=Cairo,Egypt" target="_blank" class="map-btn reveal">
+        <i class="fas fa-directions"></i>
+        الحصول على الاتجاهات
+      </a>
+    </section>
+
+    <!-- ===== RSVP Section ===== -->
+    <section class="rsvp-section">
+      <div class="section-ornament reveal">✦ ✦ ✦</div>
+      <h2 class="section-title reveal">تأكيد الحضور</h2>
+      <p class="rsvp-sub reveal">يسعدنا تأكيد حضوركم الكريم معنا في هذه الليلة المباركة</p>
+
+      <div class="rsvp-buttons reveal">
+        <button class="rsvp-btn accept" id="acceptBtn" onclick="rsvp('accept')">
+          <i class="fas fa-check-circle"></i>
+          سأحضر بإذن الله
+        </button>
+        <button class="rsvp-btn decline" id="declineBtn" onclick="rsvp('decline')">
+          <i class="fas fa-times-circle"></i>
+          اعتذر عن الحضور
+        </button>
+      </div>
+
+      <div id="rsvpMessage" class="rsvp-message hidden"></div>
+    </section>
+
+    <!-- ===== Wishes Section ===== -->
+    <section class="wishes-section">
+      <div class="section-ornament reveal">✦ ✦ ✦</div>
+      <h2 class="section-title dark-section reveal">أرسل تهنئتك</h2>
+
+      <div class="wish-form reveal">
+        <input type="text" id="wishName" placeholder="اسمك الكريم" class="wish-input" />
+        <textarea id="wishText" placeholder="اكتب كلمة تهنئة للعروسين..." class="wish-textarea" rows="4"></textarea>
+        <button class="wish-btn" onclick="sendWish()">
+          <i class="fas fa-paper-plane"></i>
+          أرسل التهنئة
+        </button>
+      </div>
+
+      <div id="wishesList" class="wishes-list"></div>
+    </section>
+
+    <!-- ===== Contact Section ===== -->
+    <section class="contact-section">
+      <div class="section-ornament reveal">✦ ✦ ✦</div>
+      <h2 class="section-title reveal">تواصل معنا</h2>
+      <p class="rsvp-sub reveal">لأي استفسار أو تأكيد حضور</p>
+
+      <div class="contact-buttons reveal">
+        <a href="https://wa.me/201093421310" target="_blank" class="contact-btn whatsapp">
+          <i class="fab fa-whatsapp"></i>
+          واتساب العريس
+        </a>
+        <a href="tel:+201093421310" class="contact-btn phone">
+          <i class="fas fa-phone-alt"></i>
+          اتصل بنا
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+      <div class="footer-icon">🌿</div>
+      <div class="footer-names shimmer-text">مصطفى & ياسمين</div>
+      <div class="footer-date">✦ 17 يوليو 2027 ✦</div>
+      <div style="height:20px"></div>
+      <div class="footer-quote">
+        بارك الله لهما وعليهما وجمع بينهما في خير
+      </div>
+    </footer>
+
+  </div><!-- end mainContent -->
+
+  <script src="script.js"></script>
+</body>
+</html>

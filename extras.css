@@ -1,0 +1,88 @@
+/* ===== Splash Corner SVGs ===== */
+.splash-corner {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  opacity: 0.6;
+}
+.splash-corner.tl { top: 0; left: 0; }
+.splash-corner.tr { top: 0; right: 0; transform: scaleX(-1); }
+.splash-corner.bl { bottom: 0; left: 0; transform: scaleY(-1); }
+.splash-corner.br { bottom: 0; right: 0; transform: scale(-1,-1); }
+
+@media (max-width: 480px) {
+  .splash-corner { width: 70px; height: 70px; }
+}
+
+/* ===== Splash divider ===== */
+.splash-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  margin: 15px auto 20px;
+  max-width: 200px;
+}
+.splash-divider span {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212,175,55,0.5));
+}
+.splash-divider span:last-child {
+  background: linear-gradient(90deg, rgba(212,175,55,0.5), transparent);
+}
+.splash-divider i {
+  color: var(--gold);
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+/* ===== Splash Henna Icon ===== */
+.splash-henna-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  animation: fadeInDown 1s 0.3s both;
+  filter: drop-shadow(0 0 15px rgba(212,175,55,0.5));
+}
+
+/* ===== Hero ornament ===== */
+.hero-ornament {
+  width: min(500px, 90vw);
+  margin: 0 auto 30px;
+}
+
+/* ===== Henna pattern overlay on sections ===== */
+.details-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='1.5' fill='%230B3B2C' opacity='0.05'/%3E%3C/svg%3E");
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+/* ===== Contact section rsvp-sub ===== */
+.contact-section .rsvp-sub { color: var(--text-mid); }
+
+/* ===== Glow effect on names ===== */
+.hero .person-name {
+  animation: nameGlow 3s ease infinite alternate;
+}
+@keyframes nameGlow {
+  from { text-shadow: 0 0 15px rgba(212,175,55,0.3); }
+  to   { text-shadow: 0 0 30px rgba(212,175,55,0.7), 0 0 60px rgba(212,175,55,0.3); }
+}
+
+/* ===== Section top gold line ===== */
+.countdown-section::after,
+.location-section::after,
+.wishes-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212,175,55,0.3), transparent);
+}
+
+/* ===== RSVP section on light bg ===== */
+.rsvp-section .section-title { color: var(--green-dark); }
