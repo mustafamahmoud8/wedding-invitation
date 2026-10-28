@@ -10,7 +10,7 @@
   <meta property="og:image" content="assets/opening-bg-B6x-wzQI.jpg"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=Inter:wght@300;400;500&family=Great+Vibes&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="mokamu.css"/>
 </head>
 <body>
@@ -38,18 +38,16 @@
      OPENING SCREEN
 ══════════════════════════════════════ -->
 <div class="opening-screen opening-screen--arriving" id="openingScreen">
-
-  <div class="opening-screen__background" id="openingBg"
-       style="background-image:url('assets/opening-bg-B6x-wzQI.jpg')"></div>
+  <div class="opening-screen__background" style="background-image:url('assets/opening-bg-B6x-wzQI.jpg')"></div>
   <div class="opening-screen__warm-overlay"></div>
   <div class="opening-screen__vignette"></div>
   <div class="opening-screen__petals" id="openingPetals" aria-hidden="true"></div>
 
   <div class="opening-screen__content">
 
-    <!-- Quranic verse -->
+    <!-- Verse -->
     <div class="opening-screen__verse">
-      <p>وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا</p>
+      <p>وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا</p>
     </div>
 
     <!-- Scene -->
@@ -59,16 +57,11 @@
       <div class="opening-screen__delivery-stage" aria-hidden="true">
         <img class="opening-screen__branch" src="assets/branch-B_gtSd-M.png" alt=""/>
         <div class="opening-screen__dove" id="dove">
-          <img class="opening-screen__dove-layer opening-screen__dove-layer--flying"
-               src="assets/dove-flying-DguQr4M8.png" alt="" draggable="false"/>
-          <img class="opening-screen__dove-layer opening-screen__dove-layer--perched-body"
-               src="assets/dove-standup-BaY1_5Yh.png" alt="" draggable="false"/>
-          <img class="opening-screen__dove-layer opening-screen__dove-layer--glide-body"
-               src="assets/fly-leave-CYx7G3Q2.png" alt="" draggable="false"/>
-          <img class="opening-screen__dove-wing opening-screen__dove-wing--arrive"
-               src="assets/dove-wing-C3JZYFk2.png" alt="" draggable="false"/>
-          <img class="opening-screen__dove-wing opening-screen__dove-wing--depart"
-               src="assets/dove-wing-C3JZYFk2.png" alt="" draggable="false"/>
+          <img class="opening-screen__dove-layer opening-screen__dove-layer--flying"     src="assets/dove-flying-DguQr4M8.png"   alt="" draggable="false"/>
+          <img class="opening-screen__dove-layer opening-screen__dove-layer--perched-body" src="assets/dove-standup-BaY1_5Yh.png" alt="" draggable="false"/>
+          <img class="opening-screen__dove-layer opening-screen__dove-layer--glide-body"   src="assets/fly-leave-CYx7G3Q2.png"   alt="" draggable="false"/>
+          <img class="opening-screen__dove-wing opening-screen__dove-wing--arrive" src="assets/dove-wing-C3JZYFk2.png" alt="" draggable="false"/>
+          <img class="opening-screen__dove-wing opening-screen__dove-wing--depart" src="assets/dove-wing-C3JZYFk2.png" alt="" draggable="false"/>
         </div>
         <div class="opening-screen__dove-release-glow"></div>
       </div>
@@ -77,41 +70,88 @@
       <div class="opening-screen__envelope-float" id="envelopeFloat">
         <div class="opening-screen__envelope" id="envelope">
 
-          <!-- Body -->
           <img class="opening-screen__env-body" src="assets/envelope-body-D_ut2FYm.png" alt="" draggable="false"/>
 
-          <!-- Custom Card Overlay (replaces henna card text) -->
+          <!-- ══ بطاقة الدعوة الرومانسية ══ -->
           <div class="opening-screen__card-reveal" id="cardReveal">
-            <div class="custom-card">
-              <img class="custom-card__bg" src="assets/hennaCard-CpGQoVLw.png" alt="" draggable="false"/>
-              <div class="custom-card__overlay">
-                <div class="custom-card__bismillah">بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيمِ</div>
-                <div class="custom-card__label">حفل زفاف</div>
-                <div class="custom-card__names">
-                  <span>Mustafa</span>
-                  <span class="custom-card__heart">❤</span>
-                  <span>Yasmeen</span>
+            <div class="inv-card">
+
+              <!-- حدود ذهبية زاوية -->
+              <div class="inv-card__corner inv-card__corner--tl"></div>
+              <div class="inv-card__corner inv-card__corner--tr"></div>
+              <div class="inv-card__corner inv-card__corner--bl"></div>
+              <div class="inv-card__corner inv-card__corner--br"></div>
+
+              <!-- زهور -->
+              <div class="inv-card__roses inv-card__roses--top" aria-hidden="true">🌹🌸🌹</div>
+
+              <div class="inv-card__inner">
+                <div class="inv-card__bismillah">بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيمِ</div>
+
+                <div class="inv-card__label">يسعدان بدعوتكم لحضور</div>
+                <div class="inv-card__event">حفل زفافهما المبارك</div>
+
+                <div class="inv-card__divider">
+                  <svg viewBox="0 0 160 16" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,8 Q40,0 80,8 Q120,16 160,8" stroke="#b8860b" stroke-width="1" fill="none"/>
+                    <circle cx="80" cy="8" r="2.5" fill="#b8860b"/>
+                    <circle cx="40" cy="4" r="1.5" fill="#b8860b" opacity=".6"/>
+                    <circle cx="120" cy="12" r="1.5" fill="#b8860b" opacity=".6"/>
+                  </svg>
                 </div>
-                <div class="custom-card__date-line">17 · 07 · 2027</div>
-                <div class="custom-card__venue">القاهرة، مصر</div>
-              </div>
-            </div>
+
+                <div class="inv-card__names-wrap">
+                  <span class="inv-card__name">مصطفى</span>
+                  <span class="inv-card__and">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="#c0392b"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  </span>
+                  <span class="inv-card__name">ياسمين</span>
+                </div>
+
+                <div class="inv-card__divider" style="transform:scaleY(-1)">
+                  <svg viewBox="0 0 160 16" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,8 Q40,0 80,8 Q120,16 160,8" stroke="#b8860b" stroke-width="1" fill="none"/>
+                    <circle cx="80" cy="8" r="2.5" fill="#b8860b"/>
+                    <circle cx="40" cy="4" r="1.5" fill="#b8860b" opacity=".6"/>
+                    <circle cx="120" cy="12" r="1.5" fill="#b8860b" opacity=".6"/>
+                  </svg>
+                </div>
+
+                <div class="inv-card__meta">
+                  <div class="inv-card__meta-item">
+                    <span class="inv-card__meta-icon">📅</span>
+                    <span>الجمعة، 17 يوليو 2027</span>
+                  </div>
+                  <div class="inv-card__meta-item">
+                    <span class="inv-card__meta-icon">⏰</span>
+                    <span>الاستقبال 7:00 م</span>
+                  </div>
+                  <div class="inv-card__meta-item">
+                    <span class="inv-card__meta-icon">📍</span>
+                    <span>قاعة النيل الكبرى، القاهرة</span>
+                  </div>
+                </div>
+
+              </div><!-- /inner -->
+
+              <div class="inv-card__roses inv-card__roses--bottom" aria-hidden="true">🌸🌹🌸</div>
+            </div><!-- /inv-card -->
           </div>
 
           <!-- Flap -->
           <img class="opening-screen__env-flap" id="envFlap" src="assets/envelope-flap-DJxDWdC1.png" alt="" draggable="false"/>
 
-          <!-- CLICKABLE WAX SEAL -->
+          <!-- SEAL = زر الفتح -->
           <div class="opening-screen__seal-wrap" id="sealWrap">
             <button class="seal-btn" id="openBtn" aria-label="اضغط لفتح الدعوة">
-              <img class="opening-screen__seal" src="assets/wax-seal-X_Iv0Xmh.png" alt="اضغط لفتح الدعوة" draggable="false"/>
+              <img class="opening-screen__seal" src="assets/wax-seal-X_Iv0Xmh.png" alt="" draggable="false"/>
               <span class="seal-btn__hint" id="sealHint">اضغط للفتح</span>
             </button>
           </div>
 
         </div>
 
-        <!-- Hint arrow under envelope (appears after dove lands) -->
+        <!-- tap hint -->
         <div class="opening-screen__tap-hint" id="tapHint">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <line x1="12" y1="5" x2="12" y2="19"/><polyline points="19,12 12,19 5,12"/>
@@ -122,15 +162,14 @@
       </div><!-- /envelope-float -->
     </div><!-- /scene -->
 
-    <!-- Names -->
+    <!-- Names bottom -->
     <div class="opening-screen__names">
       <span class="opening-screen__name">مصطفى</span>
       <span class="opening-screen__amp">❤</span>
       <span class="opening-screen__name">ياسمين</span>
     </div>
 
-  </div><!-- /content -->
-
+  </div>
   <div class="opening-screen__light-burst" id="lightBurst"></div>
 </div><!-- /opening-screen -->
 
@@ -146,8 +185,7 @@
       <span class="music-player__icon" id="musicIcon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
           <path d="M4 9v6h4l5 4V5L8 9H4Z"/>
-          <path d="M17 9.5a4 4 0 0 1 0 5"/>
-          <path d="M19.5 7a7 7 0 0 1 0 10"/>
+          <path d="M17 9.5a4 4 0 0 1 0 5"/><path d="M19.5 7a7 7 0 0 1 0 10"/>
         </svg>
       </span>
       <span class="music-player__label">الموسيقى</span>
@@ -158,12 +196,13 @@
   <section class="section hero-section">
     <div class="hero-section__bg" style="background-image:url('assets/golden-light-R2NUusKL.jpg')"></div>
     <div class="hero-section__overlay"></div>
+    <div class="hero-petals" id="heroPetals" aria-hidden="true"></div>
     <div class="section-inner hero-section__inner">
       <p class="eyebrow reveal">حفل الزفاف المبارك</p>
       <h1 class="hero-section__title reveal">
-        <span>Mustafa</span>
+        <span>مصطفى</span>
         <span class="hero-section__amp">❤</span>
-        <span>Yasmeen</span>
+        <span>ياسمين</span>
       </h1>
       <div class="hero-section__divider reveal">
         <svg viewBox="0 0 300 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -171,119 +210,67 @@
           <circle cx="150" cy="12" r="3" fill="#a9825c"/>
           <circle cx="75"  cy="7"  r="2" fill="#a9825c" opacity=".6"/>
           <circle cx="225" cy="17" r="2" fill="#a9825c" opacity=".6"/>
-          <circle cx="30"  cy="11" r="1.2" fill="#a9825c" opacity=".4"/>
-          <circle cx="270" cy="13" r="1.2" fill="#a9825c" opacity=".4"/>
         </svg>
       </div>
       <p class="hero-section__sub reveal">يسعدان بدعوتكم الكريمة لحضور حفل زفافهما</p>
     </div>
-    <div class="hero-petals" id="heroPetals" aria-hidden="true"></div>
   </section>
 
-  <!-- ══ DETAILS (PREMIUM) ══ -->
-  <section class="section details-premium">
-    <div class="details-premium__bg"></div>
+  <!-- ══ DETAILS — رومانسي مبسط ══ -->
+  <section class="section details-romantic">
+    <!-- خلفية زهور -->
+    <div class="details-romantic__bg" aria-hidden="true"></div>
 
     <div class="section-inner">
-      <p class="eyebrow text-center reveal">كل ما تحتاج معرفته</p>
+      <p class="eyebrow text-center reveal">موعد الاحتفال</p>
       <h2 class="section-title text-center reveal">تفاصيل الحفل</h2>
 
-      <!-- Big date banner -->
-      <div class="date-banner reveal">
-        <div class="date-banner__left">
-          <div class="date-banner__day-name">الجمعة</div>
-          <div class="date-banner__num">17</div>
-          <div class="date-banner__month">يوليو</div>
+      <!-- التاريخ الكبير -->
+      <div class="roman-date reveal">
+        <div class="roman-date__inner">
+          <div class="roman-date__day">الجمعة</div>
+          <div class="roman-date__num">١٧</div>
+          <div class="roman-date__month">يوليو ٢٠٢٧</div>
+          <div class="roman-date__hijri">٢٢ محرم ١٤٤٩ هـ</div>
         </div>
-        <div class="date-banner__divider">
-          <svg viewBox="0 0 2 120" xmlns="http://www.w3.org/2000/svg">
-            <line x1="1" y1="0" x2="1" y2="120" stroke="#a9825c" stroke-width="1" stroke-dasharray="4 4"/>
-          </svg>
-          <div class="date-banner__year">2027</div>
-          <svg viewBox="0 0 2 120" xmlns="http://www.w3.org/2000/svg">
-            <line x1="1" y1="0" x2="1" y2="120" stroke="#a9825c" stroke-width="1" stroke-dasharray="4 4"/>
-          </svg>
-        </div>
-        <div class="date-banner__right">
-          <div class="date-banner__hijri">٢٢ محرم ١٤٤٩ هـ</div>
-          <div class="date-banner__hearts">✦ ❤ ✦</div>
-          <div class="date-banner__tagline">ليلة لن تُنسى</div>
-        </div>
+        <div class="roman-date__heart">❤</div>
       </div>
 
-      <!-- 3 info cards -->
-      <div class="info-cards">
+      <!-- بطاقات المعلومات -->
+      <div class="roman-cards">
 
-        <!-- Time card -->
-        <div class="info-card reveal">
-          <div class="info-card__icon-ring">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <polyline points="12,6 12,12 16,14"/>
-            </svg>
-          </div>
-          <div class="info-card__body">
-            <div class="info-card__label">توقيت الحفل</div>
-            <div class="info-card__value">٨:٠٠ مساءً</div>
-            <div class="info-card__note">الاستقبال يبدأ ٧:٣٠ م</div>
-          </div>
+        <div class="roman-card reveal">
+          <div class="roman-card__icon">⏰</div>
+          <div class="roman-card__title">الاستقبال يبدأ</div>
+          <div class="roman-card__value">٧:٠٠ مساءً</div>
+          <div class="roman-card__sub">والحفل ٨:٠٠ م</div>
         </div>
 
-        <!-- Venue card -->
-        <div class="info-card info-card--featured reveal" style="transition-delay:.1s">
-          <div class="info-card__icon-ring">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
-              <circle cx="12" cy="10" r="3"/>
-            </svg>
-          </div>
-          <div class="info-card__body">
-            <div class="info-card__label">مكان الاحتفال</div>
-            <div class="info-card__value">قاعة النيل الكبرى</div>
-            <div class="info-card__note">شارع النيل، القاهرة</div>
-          </div>
+        <div class="roman-card roman-card--main reveal" style="transition-delay:.12s">
+          <div class="roman-card__icon">💒</div>
+          <div class="roman-card__title">مكان الحفل</div>
+          <div class="roman-card__value">قاعة النيل الكبرى</div>
+          <div class="roman-card__sub">شارع النيل · القاهرة</div>
+          <a href="https://maps.google.com/?q=Cairo,Egypt" target="_blank" class="roman-card__map-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><polygon points="3,11 22,2 13,21 11,13 3,11"/></svg>
+            الاتجاهات
+          </a>
         </div>
 
-        <!-- Dress code card -->
-        <div class="info-card reveal" style="transition-delay:.2s">
-          <div class="info-card__icon-ring">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20.38 3.46 16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.57a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.57a2 2 0 00-1.34-2.23z"/>
-            </svg>
-          </div>
-          <div class="info-card__body">
-            <div class="info-card__label">كود اللباس</div>
-            <div class="info-card__value">رسمي أنيق</div>
-            <div class="info-card__note">ألوان فاتحة مفضّلة</div>
-          </div>
+        <div class="roman-card reveal" style="transition-delay:.24s">
+          <div class="roman-card__icon">👗</div>
+          <div class="roman-card__title">كود اللباس</div>
+          <div class="roman-card__value">رسمي أنيق</div>
+          <div class="roman-card__sub">ألوان فاتحة مفضّلة</div>
         </div>
 
-      </div><!-- /info-cards -->
+      </div><!-- /roman-cards -->
 
-      <!-- Decorative quote -->
-      <div class="venue-quote reveal">
-        <div class="venue-quote__line"></div>
-        <p class="venue-quote__text">
-          "بارك الله لهما وعليهما وجمع بينهما في خير"
-        </p>
-        <div class="venue-quote__line"></div>
-      </div>
-
-      <!-- Map -->
-      <div class="map-wrap reveal">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110817.83!2d31.18539!3d30.05948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2sCairo!5e0!3m2!1sar!2seg!4v1698000000000"
-          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          title="موقع الحفل">
+      <!-- خريطة -->
+      <div class="map-wrap reveal" style="margin-top:2.5rem">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110817.83!2d31.18539!3d30.05948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2sCairo!5e0!3m2!1sar!2seg!4v1698000000000"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="موقع الحفل">
         </iframe>
-      </div>
-      <div class="text-center" style="margin-top:1.8rem">
-        <a href="https://maps.google.com/?q=Cairo,Egypt" target="_blank" class="btn btn--filled">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
-            <polygon points="3,11 22,2 13,21 11,13 3,11"/>
-          </svg>
-          الحصول على الاتجاهات
-        </a>
       </div>
 
     </div>
@@ -295,25 +282,13 @@
       <p class="eyebrow text-center reveal">الوقت المتبقي</p>
       <h2 class="section-title text-center reveal">العد التنازلي</h2>
       <div class="countdown" id="countdown">
-        <div class="countdown__item reveal">
-          <div class="countdown__num" id="days">00</div>
-          <div class="countdown__label">يوم</div>
-        </div>
+        <div class="countdown__item reveal"><div class="countdown__num" id="days">00</div><div class="countdown__label">يوم</div></div>
         <div class="countdown__sep">:</div>
-        <div class="countdown__item reveal" style="transition-delay:.1s">
-          <div class="countdown__num" id="hours">00</div>
-          <div class="countdown__label">ساعة</div>
-        </div>
+        <div class="countdown__item reveal" style="transition-delay:.1s"><div class="countdown__num" id="hours">00</div><div class="countdown__label">ساعة</div></div>
         <div class="countdown__sep">:</div>
-        <div class="countdown__item reveal" style="transition-delay:.2s">
-          <div class="countdown__num" id="minutes">00</div>
-          <div class="countdown__label">دقيقة</div>
-        </div>
+        <div class="countdown__item reveal" style="transition-delay:.2s"><div class="countdown__num" id="minutes">00</div><div class="countdown__label">دقيقة</div></div>
         <div class="countdown__sep">:</div>
-        <div class="countdown__item reveal" style="transition-delay:.3s">
-          <div class="countdown__num" id="seconds">00</div>
-          <div class="countdown__label">ثانية</div>
-        </div>
+        <div class="countdown__item reveal" style="transition-delay:.3s"><div class="countdown__num" id="seconds">00</div><div class="countdown__label">ثانية</div></div>
       </div>
     </div>
   </section>
@@ -323,21 +298,21 @@
     <div class="section-inner">
       <p class="eyebrow text-center reveal">كلمات المحبة</p>
       <h2 class="section-title text-center reveal">أرسل تهنئتك</h2>
+      <p class="wishes-sub reveal">سيصلنا تهنئتك مباشرةً على الواتساب 💬</p>
       <div class="wish-form reveal">
         <input type="text" id="wishName" class="wish-input" placeholder="اسمك الكريم" dir="rtl"/>
-        <textarea id="wishText" class="wish-textarea" placeholder="اكتب كلمة تهنئة..." rows="4" dir="rtl"></textarea>
-        <button class="btn btn--filled" onclick="sendWish()" style="align-self:center;gap:.7rem">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
-            <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9 22,2"/>
+        <textarea id="wishText" class="wish-textarea" placeholder="اكتب كلمة تهنئة من قلبك..." rows="4" dir="rtl"></textarea>
+        <button class="wish-send-btn" id="wishSendBtn" onclick="sendWishWhatsapp()">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.125.556 4.126 1.527 5.855L0 24l6.335-1.527C8.074 23.444 10 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm.029 21.818c-1.844 0-3.555-.494-5.037-1.355l-.361-.214-3.741.981.999-3.648-.235-.374A9.79 9.79 0 012.18 12.03c0-5.412 4.41-9.82 9.849-9.82 5.413 0 9.82 4.408 9.82 9.82 0 5.439-4.407 9.818-9.82 9.818z"/>
           </svg>
-          أرسل التهنئة
+          أرسل تهنئتك عبر واتساب
         </button>
       </div>
-      <div id="wishesList" class="wishes-list"></div>
     </div>
   </section>
 
-  <!-- ══ CLOSING FOOTER ══ -->
+  <!-- ══ FOOTER ══ -->
   <footer class="closing-section">
     <div class="closing-section__bg" style="background-image:url('assets/closing-background-DHQFHisl.png')"></div>
     <div class="closing-section__overlay"></div>
@@ -346,9 +321,8 @@
         <img src="assets/flower-Dy1EeSzN.png" alt=""/>
       </div>
       <p class="closing-section__dua">بارك الله لهما وعليهما وجمع بينهما في خير</p>
-      <div class="closing-section__names">Mustafa ❤️ Yasmeen</div>
-      <div class="closing-section__date">17 يوليو 2027  ·  القاهرة</div>
-      <!-- swans -->
+      <div class="closing-section__names">مصطفى ❤️ ياسمين</div>
+      <div class="closing-section__date">١٧ يوليو ٢٠٢٧  ·  القاهرة</div>
       <div class="swans swans--footer" aria-hidden="true">
         <img class="swans__left"  src="assets/left-swan-DbIMn2Zu.png"  alt=""/>
         <img class="swans__right" src="assets/right-swan-CFPrd7xa.png" alt=""/>
@@ -356,7 +330,7 @@
     </div>
   </footer>
 
-</main><!-- /invitation -->
+</main>
 
 <script src="mokamu.js"></script>
 </body>

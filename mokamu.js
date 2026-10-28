@@ -268,10 +268,7 @@ function initScrollReveal() {
 // ══════════════════════════════════════════════
 // WISHES
 // ══════════════════════════════════════════════
-let wishes = [
-  { name: 'أم العريس', text: 'بارك الله لكما وعليكما وجمع بينكما في خير 💛' },
-  { name: 'أهل البيت', text: 'ألف مبروك يا غالين، ربنا يتمم عليكم بالسعادة 🌿' },
-];
+let wishes = [];
 
 function renderWishes() {
   const list = document.getElementById('wishesList');
@@ -285,7 +282,7 @@ function renderWishes() {
   });
 }
 
-function sendWish() {
+function sendWishWhatsapp() {
   const nameEl = document.getElementById('wishName');
   const textEl = document.getElementById('wishText');
   const name = nameEl.value.trim();
@@ -293,20 +290,23 @@ function sendWish() {
   if (!name || !text) {
     const bad = !name ? nameEl : textEl;
     bad.style.borderColor = '#c0392b';
+    bad.classList.add('shake');
     bad.focus();
-    setTimeout(() => { bad.style.borderColor = ''; }, 2000);
+    setTimeout(() => { bad.style.borderColor = ''; bad.classList.remove('shake'); }, 2000);
     return;
   }
-  wishes.unshift({ name, text });
-  renderWishes();
+  const msg = encodeURIComponent(`تهنئة من: ${name}\n\n${text}`);
+  window.open(`https://wa.me/201093421310?text=${msg}`, '_blank');
   nameEl.value = ''; textEl.value = '';
-  const btn = document.querySelector('.wish-form .btn');
-  const orig = btn.innerHTML;
-  btn.innerHTML = '✓ تم الإرسال بنجاح!';
-  btn.style.background = '#7c8a6e'; btn.style.borderColor = '#7c8a6e';
-  setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.style.borderColor = ''; }, 2500);
+  const btn = document.getElementById('wishSendBtn');
+  if (btn) {
+    const orig = btn.innerHTML;
+    btn.innerHTML = '✅ تم الإرسال عبر واتساب!';
+    btn.style.opacity = '.75';
+    setTimeout(() => { btn.innerHTML = orig; btn.style.opacity = ''; }, 3000);
+  }
 }
-window.sendWish = sendWish;
+window.sendWishWhatsapp = sendWishWhatsapp;
 
 // ══════════════════════════════════════════════
 // CONFETTI (not used now but kept)

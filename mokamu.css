@@ -292,3 +292,280 @@ a{color:inherit}
   .music-player{bottom:1rem;left:1rem}
   .venue-quote__text{font-size:.85rem}
 }
+
+/* ================================================
+   INVITATION CARD (inside envelope)
+   ================================================ */
+.inv-card{
+  position:relative;
+  background:linear-gradient(160deg,#fdf8ef 0%,#f9f0dc 55%,#fdf8ef 100%);
+  border:2px solid var(--brass-light);
+  border-radius:6px;
+  padding:2.5rem 2rem 2rem;
+  text-align:center;
+  font-family:'Amiri',serif;
+  direction:rtl;
+  box-shadow:0 8px 40px rgba(100,70,30,.18),0 2px 8px rgba(100,70,30,.10),inset 0 0 60px rgba(212,175,55,.06);
+  overflow:hidden;
+}
+/* Gold frame line inside */
+.inv-card::before{
+  content:'';
+  position:absolute;
+  inset:8px;
+  border:1px solid rgba(212,175,55,.35);
+  border-radius:4px;
+  pointer-events:none;
+}
+/* Corner ornaments */
+.inv-card__corner{
+  position:absolute;
+  width:38px;height:38px;
+  background:none;
+}
+.inv-card__corner--tl{top:6px;right:6px;border-top:2px solid var(--brass);border-right:2px solid var(--brass);border-radius:0 6px 0 0}
+.inv-card__corner--tr{top:6px;left:6px;border-top:2px solid var(--brass);border-left:2px solid var(--brass);border-radius:6px 0 0 0}
+.inv-card__corner--bl{bottom:6px;right:6px;border-bottom:2px solid var(--brass);border-right:2px solid var(--brass);border-radius:0 0 0 6px}
+.inv-card__corner--br{bottom:6px;left:6px;border-bottom:2px solid var(--brass);border-left:2px solid var(--brass);border-radius:0 0 6px 0}
+
+/* Rose decoration */
+.inv-card__roses{
+  font-size:1.4rem;
+  letter-spacing:.15em;
+  opacity:.8;
+  margin-bottom:.4rem;
+  display:block;
+}
+.inv-card__roses--top{margin-bottom:.6rem}
+
+.inv-card__inner{display:flex;flex-direction:column;align-items:center;gap:.5rem}
+.inv-card__bismillah{
+  font-size:1.1rem;
+  color:var(--brass);
+  font-weight:700;
+  letter-spacing:.04em;
+  margin-bottom:.2rem;
+}
+.inv-card__label{
+  font-size:.78rem;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  font-family:'Inter',sans-serif;
+}
+.inv-card__event{
+  font-size:1rem;
+  color:var(--brass);
+  font-weight:700;
+  margin-top:-.15rem;
+}
+/* Decorative divider */
+.inv-card__divider{
+  display:flex;align-items:center;gap:.6rem;width:100%;max-width:260px;
+}
+.inv-card__divider-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--brass-light),transparent)}
+.inv-card__divider-icon{font-size:.9rem;opacity:.75;flex-shrink:0}
+
+/* Names */
+.inv-card__names-wrap{
+  display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;justify-content:center;
+  margin:.2rem 0;
+}
+.inv-card__name{
+  font-family:'Fraunces',serif;
+  font-size:clamp(1.5rem,5vw,2.1rem);
+  color:#5a3e20;
+  font-weight:600;
+  line-height:1.1;
+}
+.inv-card__and{
+  font-size:1.4rem;
+  color:var(--brass);
+  animation:heartBeat 1.4s ease-in-out infinite;
+}
+@keyframes heartBeat{0%,100%{transform:scale(1)}50%{transform:scale(1.22)}}
+
+/* Meta info */
+.inv-card__meta{
+  display:flex;flex-direction:column;gap:.35rem;align-items:center;
+  width:100%;margin-top:.4rem;
+}
+.inv-card__meta-item{
+  display:flex;align-items:center;gap:.5rem;
+  font-size:.9rem;color:var(--ink-soft);
+}
+.inv-card__meta-icon{font-size:1rem}
+.inv-card__meta-text{color:var(--ink);font-weight:600;font-size:.95rem}
+
+/* ================================================
+   ROMANTIC DETAILS SECTION
+   ================================================ */
+.details-romantic{
+  background:linear-gradient(180deg,var(--cream-deep) 0%,var(--ivory) 100%);
+  position:relative;
+}
+.details-romantic::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:3px;
+  background:linear-gradient(90deg,transparent,var(--brass),transparent);
+}
+
+/* Big date block */
+.roman-date{
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:3rem;
+}
+.roman-date__inner{
+  background:var(--ivory);
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:2rem 3.5rem;
+  display:flex;align-items:center;gap:2rem;
+  box-shadow:var(--shadow);
+  position:relative;
+  overflow:hidden;
+}
+.roman-date__inner::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,rgba(212,175,55,.07) 0%,transparent 60%);
+}
+.roman-date__day{
+  font-family:'Amiri',serif;
+  font-size:1rem;
+  color:var(--brass);
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.roman-date__num{
+  font-family:'Fraunces',serif;
+  font-size:clamp(4rem,14vw,7rem);
+  color:var(--brass);
+  line-height:1;
+  font-weight:300;
+}
+.roman-date__month-block{display:flex;flex-direction:column;gap:.2rem;align-items:flex-start}
+.roman-date__month{
+  font-family:'Fraunces',serif;
+  font-size:clamp(1.3rem,4vw,2rem);
+  color:#5a3e20;
+  font-weight:600;
+}
+.roman-date__year{font-size:.9rem;color:var(--ink-soft);letter-spacing:.15em}
+.roman-date__hijri{font-size:.8rem;color:var(--brass-light);font-family:'Amiri',serif}
+.roman-date__heart{
+  font-size:2.5rem;
+  animation:heartBeat 1.4s ease-in-out infinite;
+  position:absolute;
+  right:1.5rem;top:1rem;
+  opacity:.25;
+}
+
+/* 3-col cards */
+.roman-cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.25rem;
+  max-width:780px;
+  margin:0 auto;
+}
+.roman-card{
+  background:var(--ivory);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:1.8rem 1.25rem;
+  text-align:center;
+  box-shadow:var(--shadow);
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease);
+  position:relative;
+  overflow:hidden;
+}
+.roman-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:3px;
+  background:linear-gradient(90deg,transparent,var(--brass-light),transparent);
+}
+.roman-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(42,35,24,.12)}
+.roman-card--main{
+  background:linear-gradient(160deg,#2a2318 0%,#3d3020 100%);
+  border-color:var(--brass);
+}
+.roman-card--main::before{background:linear-gradient(90deg,transparent,var(--brass),transparent)}
+.roman-card--main .roman-card__title{color:rgba(247,241,230,.7)}
+.roman-card--main .roman-card__value{color:var(--brass-light)}
+.roman-card--main .roman-card__sub{color:rgba(247,241,230,.55)}
+
+.roman-card__icon{font-size:2rem;margin-bottom:.7rem;display:block}
+.roman-card__title{
+  font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink-soft);font-family:'Inter',sans-serif;margin-bottom:.4rem;
+}
+.roman-card__value{
+  font-family:'Fraunces',serif;
+  font-size:clamp(1rem,2.5vw,1.35rem);
+  color:#3d3020;font-weight:600;line-height:1.25;
+}
+.roman-card__sub{font-size:.78rem;color:var(--ink-soft);margin-top:.3rem}
+.roman-card__map-btn{
+  display:inline-flex;align-items:center;gap:.4rem;
+  margin-top:.75rem;
+  padding:.45rem .9rem;
+  background:rgba(212,175,55,.12);
+  border:1px solid rgba(212,175,55,.4);
+  border-radius:50px;
+  color:var(--brass-light);
+  font-size:.75rem;
+  letter-spacing:.1em;
+  text-decoration:none;
+  transition:background .3s,border-color .3s;
+  font-family:'Inter',sans-serif;
+}
+.roman-card__map-btn:hover{background:rgba(212,175,55,.25);border-color:var(--brass)}
+
+/* ================================================
+   WISHES SECTION
+   ================================================ */
+.wishes-sub{
+  text-align:center;
+  color:var(--ink-soft);
+  font-family:'Amiri',serif;
+  font-size:1.05rem;
+  margin-bottom:1.5rem;
+  line-height:1.8;
+}
+
+/* WhatsApp send button */
+.wish-send-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:.6rem;
+  width:100%;
+  padding:1rem 1.5rem;
+  background:linear-gradient(135deg,#25d366 0%,#128c7e 100%);
+  border:none;
+  border-radius:14px;
+  color:#fff;
+  font-family:'Amiri',serif;
+  font-size:1.1rem;
+  font-weight:700;
+  letter-spacing:.02em;
+  cursor:pointer;
+  transition:transform .2s var(--ease),box-shadow .2s var(--ease),filter .2s;
+  box-shadow:0 6px 24px rgba(37,211,102,.25);
+}
+.wish-send-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 32px rgba(37,211,102,.35);
+  filter:brightness(1.06);
+}
+.wish-send-btn:active{transform:scale(.97)}
+
+
+@keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+.shake{animation:shake .4s ease}
