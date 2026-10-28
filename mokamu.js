@@ -1,11 +1,11 @@
 /* ══════════════════════════════════════════════
-   MOKAMU-STYLE WEDDING — Main Script v2
-   Seal click triggers opening animation
+   WEDDING INVITATION — Main Script v3
+   Performance-first · Smooth · Mobile-ready
 ══════════════════════════════════════════════ */
 
 // ── DOM refs ──
 const openingScreen  = document.getElementById('openingScreen');
-const openBtn        = document.getElementById('openBtn');      // = seal button
+const openBtn        = document.getElementById('openBtn');
 const mainInvitation = document.getElementById('mainInvitation');
 const lightBurst     = document.getElementById('lightBurst');
 const envFlap        = document.getElementById('envFlap');
@@ -25,22 +25,23 @@ let musicMuted = false;
 let opened = false;
 
 // ══════════════════════════════════════════════
-// AMBIENT MOTES
+// AMBIENT MOTES — GPU-only transform
 // ══════════════════════════════════════════════
 function initAmbientMotes() {
   const container = document.getElementById('ambientMotes');
-  for (let i = 0; i < 18; i++) {
+  if (!container) return;
+  for (let i = 0; i < 16; i++) {
     const m = document.createElement('div');
     m.className = 'ambient__mote';
-    const size = 4 + Math.random() * 8;
-    m.style.cssText = `left:${Math.random()*100}%;width:${size}px;height:${size}px;--drift:${(Math.random()-.5)*80}px;animation-duration:${12+Math.random()*20}s;animation-delay:${-Math.random()*20}s;`;
+    const size = 4 + Math.random() * 7;
+    m.style.cssText = `left:${Math.random()*100}%;width:${size}px;height:${size}px;--drift:${(Math.random()-.5)*70}px;animation-duration:${14+Math.random()*18}s;animation-delay:${-Math.random()*22}s;`;
     container.appendChild(m);
   }
 }
 initAmbientMotes();
 
 // ══════════════════════════════════════════════
-// PETAL RAIN
+// PETAL DATA + CREATOR
 // ══════════════════════════════════════════════
 const PETALS = [
   {left:4,size:26,dur:13,delay:-2,drift:34,spin:210,op:.85},
@@ -73,11 +74,26 @@ function createPetals(containerId, petals, opacityMult = 1) {
     el.className = 'petal';
     el.src = p.size > 28 ? 'assets/rose-petal1-DlYa-Dca.png' : 'assets/rose-petal-DS8fjcGP.png';
     el.draggable = false;
+    el.loading = 'lazy';
     el.style.cssText = `left:${p.left}%;width:${p.size}px;height:auto;--spin:${p.spin}deg;--drift:${p.drift}px;animation-duration:${p.dur}s;animation-delay:${p.delay}s;animation-iteration-count:infinite;opacity:${p.op * opacityMult};`;
     container.appendChild(el);
   });
 }
 createPetals('openingPetals', PETALS);
+
+// ── Section petals (emoji-based, ultra-light) ──
+function spawnSectionPetals(containerId, count = 6) {
+  const c = document.getElementById(containerId);
+  if (!c) return;
+  const emojis = ['🌸','🌹','🌺','💐'];
+  for (let i = 0; i < count; i++) {
+    const el = document.createElement('span');
+    el.className = 'section-petal';
+    el.textContent = emojis[i % emojis.length];
+    el.style.cssText = `left:${5+Math.random()*90}%;--sdrift:${(Math.random()-.5)*60}px;--sspin:${(Math.random()>.5?1:-1)*180}deg;animation-duration:${10+Math.random()*14}s;animation-delay:${-Math.random()*12}s;font-size:${.65+Math.random()*.5}rem;`;
+    c.appendChild(el);
+  }
+}
 
 // ══════════════════════════════════════════════
 // AUDIO HELPERS
@@ -131,57 +147,43 @@ function doveDepart() {
 }
 
 // ══════════════════════════════════════════════
-// SEAL (=OPEN BTN) CLICK → ENVELOPE ANIMATION
+// SEAL CLICK → OPENING ANIMATION
 // ══════════════════════════════════════════════
 openBtn.addEventListener('click', () => {
   if (opened) return;
   opened = true;
 
-  // Start audio on user interaction
   startOpeningAudio();
 
-  // Hide seal hint text
   const hint = document.getElementById('sealHint');
   if (hint) hint.style.opacity = '0';
   if (tapHint) tapHint.style.display = 'none';
 
-  // Dove & branch depart
   doveDepart();
   const branch = document.querySelector('.opening-screen__branch');
   if (branch) branch.style.animation = '1.9s cubic-bezier(.4,0,.2,1) forwards branch-depart';
 
-  // Seal shrink animation before hiding
-  sealWrap.style.transition = 'transform .4s var(--ease-sig), opacity .4s';
+  sealWrap.style.transition = 'transform .4s, opacity .4s';
   sealWrap.style.transform  = 'translate(-50%,-50%) scale(1.3)';
   sealWrap.style.opacity    = '1';
 
-  // Step 1 (300ms): Light burst + seal pulse
   setTimeout(() => {
     lightBurst.classList.add('flash');
     setTimeout(() => lightBurst.classList.remove('flash'), 800);
     sealWrap.classList.add('hidden-seal');
   }, 300);
 
-  // Step 2 (500ms): Open flap
-  setTimeout(() => {
-    envFlap.classList.add('open');
-  }, 500);
+  setTimeout(() => { envFlap.classList.add('open'); }, 500);
+  setTimeout(() => { cardReveal.classList.add('revealed'); }, 1100);
 
-  // Step 3 (1100ms): Reveal card
   setTimeout(() => {
-    cardReveal.classList.add('revealed');
-  }, 1100);
-
-  // Step 4 (2000ms): Stop envelope sway, zoom effect
-  setTimeout(() => {
-    envelopeFloat.style.animation = 'none';
+    envelopeFloat.style.animation  = 'none';
     envelopeFloat.style.transition = 'transform 1.2s cubic-bezier(.22,1,.36,1), opacity .8s';
     envelopeFloat.style.transform  = 'scale(1.06) translateY(-4vh)';
     lightBurst.classList.add('flash');
     setTimeout(() => lightBurst.classList.remove('flash'), 800);
   }, 2000);
 
-  // Step 5 (3000ms): Reveal main invitation
   setTimeout(() => {
     openingScreen.classList.add('gone');
     mainInvitation.classList.remove('hidden');
@@ -194,7 +196,10 @@ openBtn.addEventListener('click', () => {
     switchToBgMusic();
     initScrollReveal();
     startCountdown();
-    createPetals('heroPetals', PETALS.slice(0, 10), 0.35);
+    createPetals('heroPetals', PETALS.slice(0, 10), 0.32);
+    spawnSectionPetals('detailsPetals', 5);
+    spawnSectionPetals('countdownPetals', 4);
+    initParallax();
     renderWishes();
 
     setTimeout(() => { if (openingScreen.parentNode) openingScreen.remove(); }, 1200);
@@ -216,57 +221,94 @@ musicBtn.addEventListener('click', () => {
 });
 
 // ══════════════════════════════════════════════
-// COUNTDOWN
+// COUNTDOWN with flip animation
 // ══════════════════════════════════════════════
 function startCountdown() {
   const target = new Date('2027-07-17T20:00:00');
-  const dEl = document.getElementById('days');
-  const hEl = document.getElementById('hours');
-  const mEl = document.getElementById('minutes');
-  const sEl = document.getElementById('seconds');
-  if (sEl) sEl.style.transition = 'transform .14s ease';
+  const els = {
+    d: document.getElementById('days'),
+    h: document.getElementById('hours'),
+    m: document.getElementById('minutes'),
+    s: document.getElementById('seconds'),
+  };
+
+  function setNum(el, val) {
+    if (!el) return;
+    const str = String(val).padStart(2, '0');
+    if (el.textContent === str) return;
+    el.classList.remove('tick');
+    void el.offsetWidth; // reflow
+    el.classList.add('tick');
+    el.textContent = str;
+  }
 
   function tick() {
     const diff = target - new Date();
     if (diff <= 0) {
-      [dEl,hEl,mEl,sEl].forEach(el => { if(el) el.textContent = '00'; });
+      Object.values(els).forEach(el => { if (el) el.textContent = '00'; });
       return;
     }
-    const d = Math.floor(diff/86400000);
-    const h = Math.floor((diff%86400000)/3600000);
-    const m = Math.floor((diff%3600000)/60000);
-    const s = Math.floor((diff%60000)/1000);
-    if(dEl) dEl.textContent = String(d).padStart(2,'0');
-    if(hEl) hEl.textContent = String(h).padStart(2,'0');
-    if(mEl) mEl.textContent = String(m).padStart(2,'0');
-    if(sEl && sEl.textContent !== String(s).padStart(2,'0')) {
-      sEl.style.transform = 'scale(1.18)';
-      sEl.textContent = String(s).padStart(2,'0');
-      setTimeout(() => { sEl.style.transform = 'scale(1)'; }, 140);
-    }
+    setNum(els.d, Math.floor(diff / 86400000));
+    setNum(els.h, Math.floor((diff % 86400000) / 3600000));
+    setNum(els.m, Math.floor((diff % 3600000) / 60000));
+    setNum(els.s, Math.floor((diff % 60000) / 1000));
   }
   tick();
   setInterval(tick, 1000);
 }
 
 // ══════════════════════════════════════════════
-// SCROLL REVEAL
+// SCROLL REVEAL — IntersectionObserver
 // ══════════════════════════════════════════════
 function initScrollReveal() {
+  const revealClasses = ['.reveal', '.reveal-left', '.reveal-scale'];
+  const allEls = document.querySelectorAll(revealClasses.join(','));
+
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
-        const delay = parseFloat(e.target.style.transitionDelay || '0') * 1000;
-        setTimeout(() => e.target.classList.add('visible'), delay);
+        const delay = parseFloat(e.target.dataset.delay || e.target.style.transitionDelay || '0') * 1000;
+        setTimeout(() => e.target.classList.add('visible'), delay > 0 ? delay : 0);
         obs.unobserve(e.target);
       }
     });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+  allEls.forEach(el => obs.observe(el));
+
+  // Stagger cards
+  document.querySelectorAll('.roman-card').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.1}s`;
+  });
+  document.querySelectorAll('.countdown__item').forEach((item, i) => {
+    item.style.transitionDelay = `${i * 0.08}s`;
+  });
 }
 
 // ══════════════════════════════════════════════
-// WISHES
+// PARALLAX — rAF-based, GPU only
+// ══════════════════════════════════════════════
+function initParallax() {
+  const heroBg = document.querySelector('.hero-section__bg');
+  if (!heroBg || window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+
+  let ticking = false;
+  function onScroll() {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        const speed = 0.3;
+        heroBg.style.transform = `scale(1.04) translateY(${scrollY * speed}px) translateZ(0)`;
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+}
+
+// ══════════════════════════════════════════════
+// WISHES — WhatsApp
 // ══════════════════════════════════════════════
 let wishes = [];
 
@@ -287,6 +329,7 @@ function sendWishWhatsapp() {
   const textEl = document.getElementById('wishText');
   const name = nameEl.value.trim();
   const text = textEl.value.trim();
+
   if (!name || !text) {
     const bad = !name ? nameEl : textEl;
     bad.style.borderColor = '#c0392b';
@@ -295,9 +338,11 @@ function sendWishWhatsapp() {
     setTimeout(() => { bad.style.borderColor = ''; bad.classList.remove('shake'); }, 2000);
     return;
   }
+
   const msg = encodeURIComponent(`تهنئة من: ${name}\n\n${text}`);
   window.open(`https://wa.me/201093421310?text=${msg}`, '_blank');
   nameEl.value = ''; textEl.value = '';
+
   const btn = document.getElementById('wishSendBtn');
   if (btn) {
     const orig = btn.innerHTML;
@@ -309,37 +354,16 @@ function sendWishWhatsapp() {
 window.sendWishWhatsapp = sendWishWhatsapp;
 
 // ══════════════════════════════════════════════
-// CONFETTI (not used now but kept)
-// ══════════════════════════════════════════════
-function confettiEffect() {
-  const colors = ['#D4AF37','#a9825c','#c7a377','#7c8a6e','#f7f1e6'];
-  for (let i = 0; i < 60; i++) {
-    setTimeout(() => {
-      const p = document.createElement('div');
-      p.style.cssText = `position:fixed;left:${Math.random()*100}vw;top:-10px;width:${4+Math.random()*9}px;height:${4+Math.random()*9}px;background:${colors[Math.floor(Math.random()*colors.length)]};border-radius:${Math.random()>.5?'50%':'3px'};z-index:9998;pointer-events:none;animation:confettiFall ${2+Math.random()*3}s ease forwards;`;
-      document.body.appendChild(p);
-      setTimeout(() => p.remove(), 5500);
-    }, i * 45);
-  }
-  if (!document.getElementById('confetti-kf')) {
-    const s = document.createElement('style');
-    s.id = 'confetti-kf';
-    s.textContent = '@keyframes confettiFall{0%{transform:translateY(0)rotate(0);opacity:1}100%{transform:translateY(100vh)rotate(720deg);opacity:0}}';
-    document.head.appendChild(s);
-  }
-}
-
-// ══════════════════════════════════════════════
-// DYNAMIC KEYFRAMES
+// DYNAMIC KEYFRAMES (branch/dove departure)
 // ══════════════════════════════════════════════
 (function() {
   const s = document.createElement('style');
   s.textContent = `
-    @keyframes branch-depart{0%{opacity:1;transform:translate(0)rotate(0)scale(1)}100%{opacity:0;transform:translate(-70vw)rotate(-5deg)scale(.97)}}
+    @keyframes branch-depart{0%{opacity:1;transform:translate3d(0,0,0)rotate(0)scale(1)}100%{opacity:0;transform:translate3d(-70vw,0,0)rotate(-5deg)scale(.97)}}
     @keyframes dove-departure-fade-out{0%{opacity:1}100%{opacity:0}}
     @keyframes dove-departure-fade-in{0%{opacity:0}100%{opacity:1}}
     @keyframes wing-flap-slow{0%,100%{transform:rotate(0)}50%{transform:rotate(-12deg)}}
-    @keyframes dove-depart{0%{opacity:1;transform:translate(0)rotate(0)scale(1)}100%{opacity:0;transform:translate(-95vw,-14vh)rotate(-16deg)scale(.85)}}
+    @keyframes dove-depart{0%{opacity:1;transform:translate3d(0,0,0)rotate(0)scale(1)}100%{opacity:0;transform:translate3d(-95vw,-14vh,0)rotate(-16deg)scale(.85)}}
   `;
   document.head.appendChild(s);
 })();

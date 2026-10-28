@@ -2,15 +2,18 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>مصطفى & ياسمين | حفل الزفاف</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>مصطفى &amp; ياسمين | حفل الزفاف</title>
   <meta name="theme-color" content="#17130f"/>
-  <meta property="og:title" content="مصطفى & ياسمين | حفل الزفاف"/>
+  <meta name="description" content="يسعدان بدعوتكم لحضور حفل زفافهما المبارك"/>
+  <meta property="og:title" content="مصطفى &amp; ياسمين | حفل الزفاف"/>
   <meta property="og:description" content="يسعدان بدعوتكم لحضور حفل زفافهما المبارك"/>
   <meta property="og:image" content="assets/opening-bg-B6x-wzQI.jpg"/>
+
+  <!-- Preconnect fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=Inter:wght@300;400;500&family=Great+Vibes&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="mokamu.css"/>
 </head>
 <body>
@@ -55,7 +58,7 @@
 
       <!-- Branch + Dove -->
       <div class="opening-screen__delivery-stage" aria-hidden="true">
-        <img class="opening-screen__branch" src="assets/branch-B_gtSd-M.png" alt=""/>
+        <img class="opening-screen__branch" src="assets/branch-B_gtSd-M.png" alt="" draggable="false"/>
         <div class="opening-screen__dove" id="dove">
           <img class="opening-screen__dove-layer opening-screen__dove-layer--flying"     src="assets/dove-flying-DguQr4M8.png"   alt="" draggable="false"/>
           <img class="opening-screen__dove-layer opening-screen__dove-layer--perched-body" src="assets/dove-standup-BaY1_5Yh.png" alt="" draggable="false"/>
@@ -75,19 +78,15 @@
           <!-- ══ بطاقة الدعوة الرومانسية ══ -->
           <div class="opening-screen__card-reveal" id="cardReveal">
             <div class="inv-card">
-
-              <!-- حدود ذهبية زاوية -->
               <div class="inv-card__corner inv-card__corner--tl"></div>
               <div class="inv-card__corner inv-card__corner--tr"></div>
               <div class="inv-card__corner inv-card__corner--bl"></div>
               <div class="inv-card__corner inv-card__corner--br"></div>
 
-              <!-- زهور -->
               <div class="inv-card__roses inv-card__roses--top" aria-hidden="true">🌹🌸🌹</div>
 
               <div class="inv-card__inner">
                 <div class="inv-card__bismillah">بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيمِ</div>
-
                 <div class="inv-card__label">يسعدان بدعوتكم لحضور</div>
                 <div class="inv-card__event">حفل زفافهما المبارك</div>
 
@@ -103,7 +102,7 @@
                 <div class="inv-card__names-wrap">
                   <span class="inv-card__name">مصطفى</span>
                   <span class="inv-card__and">
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="#c0392b"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="#c0392b"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
                   </span>
                   <span class="inv-card__name">ياسمين</span>
                 </div>
@@ -141,7 +140,7 @@
           <!-- Flap -->
           <img class="opening-screen__env-flap" id="envFlap" src="assets/envelope-flap-DJxDWdC1.png" alt="" draggable="false"/>
 
-          <!-- SEAL = زر الفتح -->
+          <!-- SEAL -->
           <div class="opening-screen__seal-wrap" id="sealWrap">
             <button class="seal-btn" id="openBtn" aria-label="اضغط لفتح الدعوة">
               <img class="opening-screen__seal" src="assets/wax-seal-X_Iv0Xmh.png" alt="" draggable="false"/>
@@ -216,27 +215,29 @@
     </div>
   </section>
 
-  <!-- ══ DETAILS — رومانسي مبسط ══ -->
+  <!-- ══ DETAILS ══ -->
   <section class="section details-romantic">
-    <!-- خلفية زهور -->
-    <div class="details-romantic__bg" aria-hidden="true"></div>
+    <div class="section-petals" id="detailsPetals" aria-hidden="true"></div>
 
     <div class="section-inner">
       <p class="eyebrow text-center reveal">موعد الاحتفال</p>
       <h2 class="section-title text-center reveal">تفاصيل الحفل</h2>
 
-      <!-- التاريخ الكبير -->
-      <div class="roman-date reveal">
+      <!-- تاريخ -->
+      <div class="roman-date reveal-scale">
         <div class="roman-date__inner">
           <div class="roman-date__day">الجمعة</div>
           <div class="roman-date__num">١٧</div>
-          <div class="roman-date__month">يوليو ٢٠٢٧</div>
-          <div class="roman-date__hijri">٢٢ محرم ١٤٤٩ هـ</div>
+          <div class="roman-date__month-block">
+            <div class="roman-date__month">يوليو ٢٠٢٧</div>
+            <div class="roman-date__year">2027</div>
+            <div class="roman-date__hijri">٢٢ محرم ١٤٤٩ هـ</div>
+          </div>
+          <div class="roman-date__heart" aria-hidden="true">❤</div>
         </div>
-        <div class="roman-date__heart">❤</div>
       </div>
 
-      <!-- بطاقات المعلومات -->
+      <!-- بطاقات -->
       <div class="roman-cards">
 
         <div class="roman-card reveal">
@@ -246,18 +247,18 @@
           <div class="roman-card__sub">والحفل ٨:٠٠ م</div>
         </div>
 
-        <div class="roman-card roman-card--main reveal" style="transition-delay:.12s">
+        <div class="roman-card roman-card--main reveal">
           <div class="roman-card__icon">💒</div>
           <div class="roman-card__title">مكان الحفل</div>
           <div class="roman-card__value">قاعة النيل الكبرى</div>
           <div class="roman-card__sub">شارع النيل · القاهرة</div>
-          <a href="https://maps.google.com/?q=Cairo,Egypt" target="_blank" class="roman-card__map-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><polygon points="3,11 22,2 13,21 11,13 3,11"/></svg>
+          <a href="https://maps.google.com/?q=Nile+Ballroom+Cairo" target="_blank" rel="noopener" class="roman-card__map-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><polygon points="3,11 22,2 13,21 11,13 3,11"/></svg>
             الاتجاهات
           </a>
         </div>
 
-        <div class="roman-card reveal" style="transition-delay:.24s">
+        <div class="roman-card reveal">
           <div class="roman-card__icon">👗</div>
           <div class="roman-card__title">كود اللباس</div>
           <div class="roman-card__value">رسمي أنيق</div>
@@ -267,8 +268,9 @@
       </div><!-- /roman-cards -->
 
       <!-- خريطة -->
-      <div class="map-wrap reveal" style="margin-top:2.5rem">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110817.83!2d31.18539!3d30.05948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2sCairo!5e0!3m2!1sar!2seg!4v1698000000000"
+      <div class="map-wrap reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110817.83!2d31.18539!3d30.05948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2sCairo!5e0!3m2!1sar!2seg!4v1698000000000"
           allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="موقع الحفل">
         </iframe>
       </div>
@@ -278,17 +280,30 @@
 
   <!-- ══ COUNTDOWN ══ -->
   <section class="section countdown-section">
+    <div class="section-petals" id="countdownPetals" aria-hidden="true"></div>
     <div class="section-inner">
       <p class="eyebrow text-center reveal">الوقت المتبقي</p>
       <h2 class="section-title text-center reveal">العد التنازلي</h2>
       <div class="countdown" id="countdown">
-        <div class="countdown__item reveal"><div class="countdown__num" id="days">00</div><div class="countdown__label">يوم</div></div>
-        <div class="countdown__sep">:</div>
-        <div class="countdown__item reveal" style="transition-delay:.1s"><div class="countdown__num" id="hours">00</div><div class="countdown__label">ساعة</div></div>
-        <div class="countdown__sep">:</div>
-        <div class="countdown__item reveal" style="transition-delay:.2s"><div class="countdown__num" id="minutes">00</div><div class="countdown__label">دقيقة</div></div>
-        <div class="countdown__sep">:</div>
-        <div class="countdown__item reveal" style="transition-delay:.3s"><div class="countdown__num" id="seconds">00</div><div class="countdown__label">ثانية</div></div>
+        <div class="countdown__item reveal">
+          <div class="countdown__num" id="days">00</div>
+          <div class="countdown__label">يوم</div>
+        </div>
+        <div class="countdown__sep" aria-hidden="true">:</div>
+        <div class="countdown__item reveal">
+          <div class="countdown__num" id="hours">00</div>
+          <div class="countdown__label">ساعة</div>
+        </div>
+        <div class="countdown__sep" aria-hidden="true">:</div>
+        <div class="countdown__item reveal">
+          <div class="countdown__num" id="minutes">00</div>
+          <div class="countdown__label">دقيقة</div>
+        </div>
+        <div class="countdown__sep" aria-hidden="true">:</div>
+        <div class="countdown__item reveal">
+          <div class="countdown__num" id="seconds">00</div>
+          <div class="countdown__label">ثانية</div>
+        </div>
       </div>
     </div>
   </section>
@@ -300,7 +315,7 @@
       <h2 class="section-title text-center reveal">أرسل تهنئتك</h2>
       <p class="wishes-sub reveal">سيصلنا تهنئتك مباشرةً على الواتساب 💬</p>
       <div class="wish-form reveal">
-        <input type="text" id="wishName" class="wish-input" placeholder="اسمك الكريم" dir="rtl"/>
+        <input type="text" id="wishName" class="wish-input" placeholder="اسمك الكريم" dir="rtl" autocomplete="name"/>
         <textarea id="wishText" class="wish-textarea" placeholder="اكتب كلمة تهنئة من قلبك..." rows="4" dir="rtl"></textarea>
         <button class="wish-send-btn" id="wishSendBtn" onclick="sendWishWhatsapp()">
           <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
@@ -309,6 +324,7 @@
           أرسل تهنئتك عبر واتساب
         </button>
       </div>
+      <div class="wishes-list" id="wishesList"></div>
     </div>
   </section>
 
